@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SolMate | Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-bg"></div>
+
+    <main class="login-card">
+        <h1 class="logo"><span class="blue">Sol</span><span class="yellow">Mate</span></h1>
+        <h2>Login</h2>
+        <form id="loginForm" novalidate>
+            <div class="input-group">
+                <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
+                <i class="fas fa-envelope input-icon"></i>
+                <input type="email" id="email" placeholder="Email Address" required>
+            </div>
+            <div class="input-group">
+                <label for="password"><i class="fas fa-lock"></i> Password</label>
+                <i class="fas fa-lock input-icon"></i>
+                <input type="password" id="password" placeholder="Password" required>
+            </div>
+            <div class="row justify-between">
+                <div></div>
+                <a href="#" class="forgot">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn primary">Log In</button>
+        </form>
+
+        <p class="signup-text">Don't Have an Account? <a href="register.html">Register Here</a></p>
+    </main>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>

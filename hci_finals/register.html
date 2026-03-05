@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SolMate | Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="register">
+    <div class="page-bg"></div>
+    <main class="login-card">
+        <h1 class="logo"><span class="blue">Sol</span><span class="yellow">Mate</span></h1>
+        <p>Create your SolMate account here!</p>
+        <h2>Sign up</h2>
+        <form id="registerForm" novalidate>
+            <div class="two-col">
+                <div class="input-group">
+                    <label for="lastName"><i class="fas fa-user"></i> Last Name</label>
+                    <i class="fas fa-user input-icon"></i>
+                    <input type="text" id="lastName" placeholder="Last Name" required>
+                </div>
+                <div class="input-group">
+                    <label for="email"><i class="fas fa-envelope"></i> Enter Your Email</label>
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input type="email" id="email" placeholder="Enter Your Email" required>
+                </div>
+                <div class="input-group">
+                    <label for="firstName"><i class="fas fa-user"></i> First Name</label>
+                    <i class="fas fa-user input-icon"></i>
+                    <input type="text" id="firstName" placeholder="First Name" required>
+                </div>
+                <div class="input-group">
+                    <label for="password"><i class="fas fa-lock"></i> Enter Your Password</label>
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="password" placeholder="Enter Your Password" required>
+                </div>
+                <div class="input-group">
+                    <label for="contact"><i class="fas fa-phone"></i> Contact Number</label>
+                    <i class="fas fa-phone input-icon"></i>
+                    <input type="tel" id="contact" placeholder="Contact Number">
+                </div>
+                <div class="input-group">
+                    <label for="confirm"><i class="fas fa-lock"></i> Confirm Password</label>
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="confirm" placeholder="Confirm Password" required>
+                </div>
+            </div>
+            <button type="submit" class="btn primary">Sign Up</button>
+        </form>
+        <p class="signup-text small">Have an Account? <a href="login.html">Log In Here</a></p>
+    </main>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
