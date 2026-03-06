@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Google registration clicked (not implemented)');
         });
     }
-});
+};
 
 // --- landing page behaviors merged ---
 document.addEventListener('DOMContentLoaded', () => {
