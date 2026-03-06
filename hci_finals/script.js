@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const raw = sessionStorage.getItem('currentUser');
         return raw ? JSON.parse(raw) : null;
     }
-});
 
     // login form handling
     const loginForm = document.getElementById('loginForm');
@@ -81,9 +80,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 email,
                 contact,
                 address,
+                password: pwd
+            };
+            const users = getUsers();
+            users.push(newUser);
+            saveUsers(users);
+            alert('Registration successful! You will be redirected to login.');
+            window.location.href = 'login.html';
+        });
     }
-}
-        )
 
     const googleBtn = document.getElementById('googleSignIn');
     if (googleBtn) {
@@ -91,9 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Google registration clicked (not implemented)');
         });
     }
-};
-
-// --- landing page behaviors merged ---
+});
 document.addEventListener('DOMContentLoaded', () => {
     let isListView = false;
 
@@ -135,6 +138,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         });
+
+        // Update link text
+        const viewToggle = document.getElementById('viewToggle');
+        if (viewToggle) {
+            viewToggle.textContent = isListView ? 'Card View' : 'List View';
+        }
     }
 
     // Button click handlers

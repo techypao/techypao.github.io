@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SolMate | About Us</title>
-    <link rel="stylesheet" href="style.css">
+    <title>SolMate | About Us</title>    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9NDikda/lyQxd/7jQDbjs4LdqWOf15D1QVB5Pj1sKC6TdHrY0i+m4b6LLWOh8tZd" crossorigin="anonymous">    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav class="navbar">
@@ -17,17 +17,171 @@
                 <li><a href="dashboard.html">Dashboard</a></li>
                 <li><a href="solarcalculator.html">Solar Calculator</a></li>
                 <li><a href="about.html">About Us</a></li>
+                <li><a href="request.html">Request</a></li>
             </ul>
             <div class="nav-user">
                 <i class="fas fa-user-circle" id="logoutBtn"></i>
+                <a href="login.html" id="logoutButton" class="btn-signin" style="margin-left: 1rem; background: #f44336; color: #fff; border: none; padding: 0.5rem 1.2rem; border-radius: 0.4rem; font-weight: 600; text-decoration: none;">Logout</a>
             </div>
         </div>
     </nav>
 
-    <main style="padding:2rem;">
-        <h1>About SolMate</h1>
-        <p>This is a placeholder about page. Content goes here.</p>
-    </main>
+    <!-- Hero Section -->
+    <section class="hero" style="background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%); color: white; padding: 4rem 2rem; text-align: center;">
+        <div class="hero-container" style="max-width: 1200px; margin: 0 auto; flex-direction: column; gap: 1rem;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">SolMate: Your Trusted Partner in<br><span style="color: #fdd835;">Sustainable Energy Solutions</span></h1>
+            <p style="font-size: 1rem; line-height: 1.6; max-width: 700px; margin: 0 auto;">Delivering sustainable and cost-effective solar energy solutions to residential and commercial customers.</p>
+        </div>
+    </section>
+
+    <!-- The Company Section -->
+    <section class="about-section" style="padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; text-align: center;">
+        <h2 class="section-title" style="margin-bottom: 2rem;">The Company</h2>
+        <p style="color: #666; line-height: 1.8; font-size: 1rem; margin-bottom: 1rem;">
+            SolMate is a leading solar energy company dedicated to providing comprehensive solar panel installation and monitoring solutions. With years of industry experience, we specialize in designing and installing solar systems tailored to meet the unique needs of residential, commercial, and industrial clients. Our mission is to make renewable energy accessible, affordable, and efficient for everyone.
+        </p>
+        <p style="color: #666; line-height: 1.8; font-size: 1rem;">
+            From initial site assessment to system maintenance and monitoring, we ensure complete customer satisfaction and maximum energy efficiency. Our expert team is committed to delivering excellence in every project we undertake.
+        </p>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section style="padding: 3rem 2rem; max-width: 1200px; margin: 0 auto;">
+        <div style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;">
+            <div style="flex: 1; min-width: 300px; padding: 2rem; background: linear-gradient(135deg, #fff3cd 0%, #ffe0b2 100%); border-radius: 0.8rem; text-align: center;">
+                <h3 style="color: #1a237e; margin-bottom: 1rem; font-weight: 700;">Our Mission</h3>
+                <p style="color: #555; line-height: 1.6;">To provide innovative, reliable, and cost-effective solar energy solutions that empower communities to transition to sustainable and clean energy for a better future.</p>
+            </div>
+            <div style="flex: 1; min-width: 300px; padding: 2rem; background: linear-gradient(135deg, #cfe9ff 0%, #bbdefb 100%); border-radius: 0.8rem; text-align: center;">
+                <h3 style="color: #1a237e; margin-bottom: 1rem; font-weight: 700;">Our Vision</h3>
+                <p style="color: #555; line-height: 1.6;">To be the leading solar energy provider in the region, recognized for our commitment to quality, sustainability, and customer satisfaction.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Locations Section -->
+    <section style="padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; background-color: #f5f5f5;">
+        <h2 class="section-title" style="margin-bottom: 2rem; text-align: center;">Our Locations</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 3rem;">Visit us at any of our service centers across the region</p>
+        
+        <!-- Featured Location -->
+        <div style="display: flex; gap: 2rem; margin-bottom: 3rem; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 300px; background: white; border-radius: 0.8rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <img src="https://via.placeholder.com/400x250/1a237e/ffffff?text=Main+Office" alt="Main Office" style="width: 100%; height: 250px; object-fit: cover;">
+                <div style="padding: 1.5rem;">
+                    <h4 style="color: #1a237e; margin-bottom: 0.5rem;">Pasig City Main Office</h4>
+                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">123 Solar Avenue, Pasig City, Philippines</p>
+                    <button class="btn btn-register" style="width: 100%;">Get Directions</button>
+                </div>
+            </div>
+            <div style="flex: 1; min-width: 300px; display: flex; flex-direction: column; justify-content: center;">
+                <h3 style="color: #1a237e; margin-bottom: 1rem;">Pasig City</h3>
+                <p style="color: #666; line-height: 1.6; margin-bottom: 1.5rem;">Our primary office location serving the metro area with full solar installation, maintenance, and consulting services. Visit us for site assessments and quotation estimates.</p>
+                <p style="color: #999; font-size: 0.9rem;"><i class="fas fa-map-marker-alt"></i> 123 Solar Avenue, Pasig City, Philippines</p>
+            </div>
+        </div>
+
+        <!-- Other Locations Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+            <div style="background: white; border-radius: 0.8rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <img src="https://via.placeholder.com/300x200/3949ab/ffffff?text=Makati" alt="Makati" style="width: 100%; height: 200px; object-fit: cover;">
+                <div style="padding: 1.5rem;">
+                    <h4 style="color: #1a237e; margin-bottom: 0.5rem;">Makati</h4>
+                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">456 Green Street, Makati City</p>
+                    <p style="color: #999; font-size: 0.85rem; line-height: 1.5;">Commercial solar solutions and enterprise installations</p>
+                    <button class="btn btn-register" style="width: 100%; margin-top: 1rem;">Visit</button>
+                </div>
+            </div>
+
+            <div style="background: white; border-radius: 0.8rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <img src="https://via.placeholder.com/300x200/5e35b1/ffffff?text=Quezon+City" alt="Quezon City" style="width: 100%; height: 200px; object-fit: cover;">
+                <div style="padding: 1.5rem;">
+                    <h4 style="color: #1a237e; margin-bottom: 0.5rem;">Quezon City</h4>
+                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">789 Energy Lane, Quezon City</p>
+                    <p style="color: #999; font-size: 0.85rem; line-height: 1.5;">Residential and mixed-use solar projects</p>
+                    <button class="btn btn-register" style="width: 100%; margin-top: 1rem;">Visit</button>
+                </div>
+            </div>
+
+            <div style="background: white; border-radius: 0.8rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <img src="https://via.placeholder.com/300x200/1a237e/ffffff?text=Las+Piñas" alt="Las Piñas" style="width: 100%; height: 200px; object-fit: cover;">
+                <div style="padding: 1.5rem;">
+                    <h4 style="color: #1a237e; margin-bottom: 0.5rem;">Las Piñas</h4>
+                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">321 Renewable Road, Las Piñas</p>
+                    <p style="color: #999; font-size: 0.85rem; line-height: 1.5;">System maintenance and monitoring center</p>
+                    <button class="btn btn-register" style="width: 100%; margin-top: 1rem;">Visit</button>
+                </div>
+            </div>
+
+            <div style="background: white; border-radius: 0.8rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <img src="https://via.placeholder.com/300x200/0d47a1/ffffff?text=Antipolo" alt="Antipolo" style="width: 100%; height: 200px; object-fit: cover;">
+                <div style="padding: 1.5rem;">
+                    <h4 style="color: #1a237e; margin-bottom: 0.5rem;">Antipolo</h4>
+                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">654 Eco Park, Antipolo City</p>
+                    <p style="color: #999; font-size: 0.85rem; line-height: 1.5;">Installation and consultation services</p>
+                    <button class="btn btn-register" style="width: 100%; margin-top: 1rem;">Visit</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section style="padding: 4rem 2rem; max-width: 1200px; margin: 0 auto;">
+        <h2 class="section-title" style="margin-bottom: 3rem; text-align: center;">Why Choose Us?</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+            <div style="padding: 1.5rem; background: #f9f9f9; border-radius: 0.8rem; border-left: 4px solid #fdd835;">
+                <h4 style="color: #1a237e; margin-bottom: 0.5rem;"><i class="fas fa-star" style="color: #fdd835;"></i> Expert Installation Team</h4>
+                <p style="color: #666; font-size: 0.9rem;">Our certified professionals have years of experience in solar installations.</p>
+            </div>
+            <div style="padding: 1.5rem; background: #f9f9f9; border-radius: 0.8rem; border-left: 4px solid #fdd835;">
+                <h4 style="color: #1a237e; margin-bottom: 0.5rem;"><i class="fas fa-certificate" style="color: #fdd835;"></i> Quality Product Guarantee</h4>
+                <p style="color: #666; font-size: 0.9rem;">We use only premium quality solar panels and equipment.</p>
+            </div>
+            <div style="padding: 1.5rem; background: #f9f9f9; border-radius: 0.8rem; border-left: 4px solid #fdd835;">
+                <h4 style="color: #1a237e; margin-bottom: 0.5rem;"><i class="fas fa-clock" style="color: #fdd835;"></i> Competitive Timelines</h4>
+                <p style="color: #666; font-size: 0.9rem;">We ensure projects are completed on schedule without compromising quality.</p>
+            </div>
+            <div style="padding: 1.5rem; background: #f9f9f9; border-radius: 0.8rem; border-left: 4px solid #fdd835;">
+                <h4 style="color: #1a237e; margin-bottom: 0.5rem;"><i class="fas fa-handshake" style="color: #fdd835;"></i> Custom Solutions Tailored</h4>
+                <p style="color: #666; font-size: 0.9rem;">Each project is customized to meet specific client requirements and budgets.</p>
+            </div>
+            <div style="padding: 1.5rem; background: #f9f9f9; border-radius: 0.8rem; border-left: 4px solid #fdd835;">
+                <h4 style="color: #1a237e; margin-bottom: 0.5rem;"><i class="fas fa-tools" style="color: #fdd835;"></i> Dedicated Support Team</h4>
+                <p style="color: #666; font-size: 0.9rem;">We provide comprehensive after-sales service and system maintenance.</p>
+            </div>
+            <div style="padding: 1.5rem; background: #f9f9f9; border-radius: 0.8rem; border-left: 4px solid #fdd835;">
+                <h4 style="color: #1a237e; margin-bottom: 0.5rem;"><i class="fas fa-chart-line" style="color: #fdd835;"></i> Proven ROI Performance</h4>
+                <p style="color: #666; font-size: 0.9rem;">Our clients enjoy significant savings with fast payback periods.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values Section -->
+    <section style="padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; background-color: #f5f5f5;">
+        <h2 class="section-title" style="margin-bottom: 3rem; text-align: center;">Our Values</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+            <div style="text-align: center; padding: 2rem; background: white; border-radius: 0.8rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <div style="font-size: 3rem; color: #fdd835; margin-bottom: 1rem;"><i class="fas fa-star"></i></div>
+                <h4 style="color: #1a237e; margin-bottom: 0.5rem;">Quality</h4>
+                <p style="color: #666; font-size: 0.9rem; line-height: 1.6;">We maintain the highest standards in every aspect of our work, ensuring reliable and efficient solar systems.</p>
+            </div>
+            <div style="text-align: center; padding: 2rem; background: white; border-radius: 0.8rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <div style="font-size: 3rem; color: #fdd835; margin-bottom: 1rem;"><i class="fas fa-handshake"></i></div>
+                <h4 style="color: #1a237e; margin-bottom: 0.5rem;">Reliability</h4>
+                <p style="color: #666; font-size: 0.9rem; line-height: 1.6;">Our clients trust us to deliver consistent performance and support throughout their solar journey.</p>
+            </div>
+            <div style="text-align: center; padding: 2rem; background: white; border-radius: 0.8rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <div style="font-size: 3rem; color: #fdd835; margin-bottom: 1rem;"><i class="fas fa-heart"></i></div>
+                <h4 style="color: #1a237e; margin-bottom: 0.5rem;">Caring</h4>
+                <p style="color: #666; font-size: 0.9rem; line-height: 1.6;">We care about our customers' satisfaction and the environmental impact of our solutions.</p>
+            </div>
+            <div style="text-align: center; padding: 2rem; background: white; border-radius: 0.8rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <div style="font-size: 3rem; color: #fdd835; margin-bottom: 1rem;"><i class="fas fa-lightbulb"></i></div>
+                <h4 style="color: #1a237e; margin-bottom: 0.5rem;">Innovation</h4>
+                <p style="color: #666; font-size: 0.9rem; line-height: 1.6;">We leverage the latest technology and industry practices to deliver cutting-edge solar solutions.</p>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -77,6 +231,7 @@
         </div>
     </footer>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoC54KNFyf5lR+PMY1zW+M1iwP1y12nZ0KK+TITN0C7ET4d" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
 </html>

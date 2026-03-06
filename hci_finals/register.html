@@ -1,3 +1,11 @@
+<!--
+SolMate Register Page Color Palette:
+    Navy Blue: #1a237e
+    Soft Blue: #bfc8e6, #c8d2f0, #e8f0fe
+    Yellow: #fdd835
+    White: #fff, #f7f8fc
+    Gray: #222, #444, #888, #b0b5c8, #d1d6e6, #e8e8e8
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,53 +15,50 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="register">
-    <div class="page-bg"></div>
-    <main class="login-card">
-        <h1 class="logo"><span class="blue">Sol</span><span class="yellow">Mate</span></h1>
-        <p>Create your SolMate account here!</p>
-        <h2>Sign up</h2>
-        <form id="registerForm" novalidate>
-            <div class="two-col">
-                <div class="input-group">
-                    <label for="lastName"><i class="fas fa-user"></i> Last Name</label>
-                    <i class="fas fa-user input-icon"></i>
-                    <input type="text" id="lastName" placeholder="Last Name" required>
+    <div class="register-bg-illustration"></div>
+    <div class="register-wrapper">
+        <div class="register-card-v2">
+            <h1 class="logo"><span class="logo-sol">Sol</span><span class="logo-mate">Mate</span></h1>
+            <p class="register-subtitle">Create your SolMate account here!</p>
+            <h2 class="register-title">Sign up</h2>
+            <form id="registerForm" class="register-form-v2" novalidate>
+                <div class="register-form-row">
+                    <div class="register-form-col">
+                        <div class="input-group">
+                            <i class="fas fa-user input-icon"></i>
+                            <input type="text" id="lastName" placeholder="Last Name" required>
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-user input-icon"></i>
+                            <input type="text" id="firstName" placeholder="First Name" required>
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-phone input-icon"></i>
+                            <input type="tel" id="contact" placeholder="Contact Number">
+                        </div>
+                    </div>
+                    <div class="register-form-col">
+                        <div class="input-group">
+                            <i class="fas fa-envelope input-icon"></i>
+                            <input type="email" id="email" placeholder="Enter Your Email" required>
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-lock input-icon"></i>
+                            <input type="password" id="password" placeholder="Enter Your Password" required>
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-lock input-icon"></i>
+                            <input type="password" id="confirm" placeholder="Confirm Password" required>
+                        </div>
+                    </div>
                 </div>
-                <div class="input-group">
-                    <label for="email"><i class="fas fa-envelope"></i> Enter Your Email</label>
-                    <i class="fas fa-envelope input-icon"></i>
-                    <input type="email" id="email" placeholder="Enter Your Email" required>
-                </div>
-                <div class="input-group">
-                    <label for="firstName"><i class="fas fa-user"></i> First Name</label>
-                    <i class="fas fa-user input-icon"></i>
-                    <input type="text" id="firstName" placeholder="First Name" required>
-                </div>
-                <div class="input-group">
-                    <label for="password"><i class="fas fa-lock"></i> Enter Your Password</label>
-                    <i class="fas fa-lock input-icon"></i>
-                    <input type="password" id="password" placeholder="Enter Your Password" required>
-                </div>
-                <div class="input-group">
-                    <label for="contact"><i class="fas fa-phone"></i> Contact Number</label>
-                    <i class="fas fa-phone input-icon"></i>
-                    <input type="tel" id="contact" placeholder="Contact Number">
-                </div>
-                <div class="input-group">
-                    <label for="address"><i class="fas fa-map-marker-alt"></i> Address</label>
-                    <i class="fas fa-map-marker-alt input-icon"></i>
-                    <input type="text" id="address" placeholder="Address">
-                </div>
-                <div class="input-group">
-                    <label for="confirm"><i class="fas fa-lock"></i> Confirm Password</label>
-                    <i class="fas fa-lock input-icon"></i>
-                    <input type="password" id="confirm" placeholder="Confirm Password" required>
-                </div>
-            </div>
-            <button type="submit" class="btn primary">Sign Up</button>
-        </form>
-        <p class="signup-text small">Have an Account? <a href="login.html">Log In Here</a></p>
-    </main>
+                <!-- Terms checkbox removed -->
+                <button type="submit" class="btn register-btn">Sign Up</button>
+                <!-- Google sign up removed -->
+            </form>
+            <p class="register-login-link">Have an Account? <a href="login.html">Log In Here</a></p>
+        </div>
+    </div>
 
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>

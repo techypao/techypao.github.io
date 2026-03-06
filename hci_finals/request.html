@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SolMate | Profile</title>
+    <title>SolMate | Request Consultation</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9NDikda/lyQxd/7jQDbjs4LdqWOf15D1QVB5Pj1sKC6TdHrY0i+m4b6LLWOh8tZd" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body style="background-color: #f0f0f0;">
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
@@ -28,35 +28,77 @@
         </div>
     </nav>
 
-    <section class="profile-header">
-        <div class="profile-info">
-            <div class="avatar">
-                <i class="fas fa-user"></i>
-            </div>
-            <div class="details">
-                <h2 id="displayName">User Name</h2>
-                <p id="roleText">Customer</p>
-            </div>
-            <div class="contact">
-                <p><i class="fas fa-envelope"></i> <span id="displayEmail"></span></p>
-                <p><i class="fas fa-phone"></i> <span id="displayPhone"></span></p>
-                <p><i class="fas fa-map-marker-alt"></i> <span id="displayAddress"></span></p>
-            </div>
+
+    <!-- Hero Section with clouds background and left-aligned heading -->
+    <section class="request-hero">
+        <div class="request-hero-content">
+            <h1 class="request-hero-title">Request a Free Solar Consultation</h1>
+            <p class="request-hero-desc">Fill out the form below and our solar specialist will contact you to assess your property and provide  a customized solar consultation</p>
         </div>
     </section>
 
-    <main class="profile-content">
-        <h3>Account Details</h3>
-        <table class="profile-table">
-            <tr><th>Full Name:</th><td id="fullName"></td></tr>
-            <tr><th>Email:</th><td id="emailRow"></td></tr>
-            <tr><th>Phone:</th><td id="phoneRow"></td></tr>
-            <tr><th>Address:</th><td id="addressRow"></td></tr>
-        </table>
-        <button class="btn btn-primary" id="editProfileBtn">Edit Profile</button>
-    </main>
+    <section class="request-form-section">
+        <h2 class="request-form-heading">Fill out this form</h2>
+        <div class="request-form-card">
+            <form>
+                <div class="request-form-row">
+                    <div class="request-form-group">
+                        <label for="fullname">Full Name</label>
+                        <div class="input-icon-group">
+                            <span class="input-icon"><i class="fas fa-user"></i></span>
+                            <input type="text" id="fullname" placeholder="Full Name" required />
+                        </div>
+                    </div>
+                    <div class="request-form-group">
+                        <label for="email">Email</label>
+                        <div class="input-icon-group">
+                            <span class="input-icon"><i class="fas fa-envelope"></i></span>
+                            <input type="email" id="email" placeholder="Enter Your Email" required />
+                        </div>
+                    </div>
+                </div>
+                <div class="request-form-row">
+                    <div class="request-form-group">
+                        <label for="phone">Phone Number</label>
+                        <div class="input-icon-group">
+                            <span class="input-icon"><i class="fas fa-phone"></i></span>
+                            <input type="tel" id="phone" placeholder="+63" required />
+                        </div>
+                    </div>
+                    <div class="request-form-group">
+                        <label for="location">Property Location</label>
+                        <div class="input-icon-group">
+                            <span class="input-icon"><i class="fas fa-map-marker-alt"></i></span>
+                            <input type="text" id="location" placeholder="Location" required />
+                        </div>
+                    </div>
+                </div>
+                <div class="request-form-row">
+                    <div class="request-form-group">
+                        <label for="area">Area</label>
+                        <div class="input-icon-group">
+                            <span class="input-icon"><i class="fas fa-map"></i></span>
+                            <input type="text" id="area" placeholder="Select your area" required />
+                        </div>
+                    </div>
+                    <div class="request-form-group">
+                        <label for="bill">Average Monthly Electricity Bill</label>
+                        <div class="input-icon-group">
+                            <span class="input-icon"><i class="fas fa-coins"></i></span>
+                            <input type="text" id="bill" placeholder="e.g., 3,000" required />
+                        </div>
+                    </div>
+                </div>
+                <div class="request-form-row align-center">
+                    <div class="request-form-group btn-group" style="justify-content: center; width: 100%;">
+                        <button type="submit" class="request-btn">Request Consultation</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
 
-    <!-- Footer -->
+    <!-- Footer copied from dashboard.html -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-section footer-about">
@@ -104,34 +146,6 @@
         </div>
     </footer>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoC54KNFyf5lR+PMY1zW+M1iwP1y12nZ0KK+TITN0C7ET4d" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const user = (function() {
-                const raw = sessionStorage.getItem('currentUser');
-                return raw ? JSON.parse(raw) : null;
-            })();
-            if (!user) {
-                window.location.href = 'login.html';
-                return;
-            }
-            const name = user.firstName + ' ' + (user.lastName || '');
-            document.getElementById('displayName').textContent = name;
-            document.getElementById('fullName').textContent = name;
-            document.getElementById('emailRow').textContent = user.email;
-            document.getElementById('displayEmail').textContent = user.email;
-            document.getElementById('phoneRow').textContent = user.contact || '-';
-            document.getElementById('displayPhone').textContent = user.contact || '-';
-            document.getElementById('addressRow').textContent = user.address || '-';
-            document.getElementById('displayAddress').textContent = user.address || '-';
-
-            // edit button placeholder
-            const editBtn = document.getElementById('editProfileBtn');
-            editBtn.addEventListener('click', () => {
-                alert('Profile editing not implemented yet');
-            });
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
