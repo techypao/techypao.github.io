@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SolMate | Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-sol">Sol</span><span class="logo-mate">Mate</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="solarcalculator.html">Solar Calculator</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+            <div class="nav-user">
+                <i class="fas fa-user-circle" id="logoutBtn"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- dashboard hero with slider and ratings -->
+    <section class="dashboard-hero">
+        <div class="dashboard-images">
+            <button class="slider-arrow prev">&#10094;</button>
+            <button class="slider-arrow next">&#10095;</button>
+            <div class="slides">
+                <img src="images/1.jpg" alt="Solar installation 1">
+                <img src="images/2.jpg" alt="Solar installation 2">
+                <img src="images/3.jpg" alt="Solar installation 3">
+            </div>
+        </div>
+    </section>
+
+
+    <main class="dashboard-content" style="padding:2rem;">
+        <h1>Welcome, <span id="userName"></span>!</h1>
+        <p>This is your dashboard. Content will go here.</p>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section footer-about">
+                <h3 class="footer-logo"><span class="logo-sol">Sol</span><span class="logo-mate">Mate</span></h3>
+                <p>SolMate is a smart solar panel installation management system designed to streamline planning, monitoring, and deployment. We help installers, homeowners, and businesses transition to clean energy with efficiency and confidence.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="solarcalculator.html">Solar Calculator</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Solar Installation</a></li>
+                    <li><a href="#">System Maintenance</a></li>
+                    <li><a href="#">Site Assessment</a></li>
+                    <li><a href="#">ROI & Quotation Estimation</a></li>
+                    <li><a href="#">Consultation</a></li>
+                </ul>
+            </div>
+            <div class="footer-section footer-socials">
+                <h4>Socials</h4>
+                <div class="social-icons">
+                    <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-info">
+                <p>&copy; 2026 RDY Solar Installation Inc. All Rights Reserved.</p>
+                <div class="footer-details">
+                    <span><i class="fas fa-map-marker-alt"></i> Pasig City, Philippines</span>
+                    <span><i class="fas fa-envelope"></i> <a href="mailto:rdysolarpanel@gmail.com">rdysolarpanel@gmail.com</a></span>
+                    <span><i class="fas fa-phone"></i> <a href="tel:+639654326865">+63 9654326865</a></span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script>
+        // ensure user is logged in
+        document.addEventListener('DOMContentLoaded', () => {
+            const user = (function() {
+                const raw = sessionStorage.getItem('currentUser');
+                return raw ? JSON.parse(raw) : null;
+            })();
+            if (!user) {
+                // not authenticated
+                window.location.href = 'login.html';
+                return;
+            }
+            document.getElementById('userName').textContent = user.firstName || user.email;
+
+            const logoutBtn = document.getElementById('logoutBtn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    sessionStorage.removeItem('currentUser');
+                    window.location.href = 'login.html';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

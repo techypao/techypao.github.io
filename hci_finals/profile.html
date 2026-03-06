@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SolMate | Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-sol">Sol</span><span class="logo-mate">Mate</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="solarcalculator.html">Solar Calculator</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+            <div class="nav-user">
+                <i class="fas fa-user-circle" id="logoutBtn"></i>
+            </div>
+        </div>
+    </nav>
+
+    <section class="profile-header">
+        <div class="profile-info">
+            <div class="avatar">
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="details">
+                <h2 id="displayName">User Name</h2>
+                <p id="roleText">Customer</p>
+            </div>
+            <div class="contact">
+                <p><i class="fas fa-envelope"></i> <span id="displayEmail"></span></p>
+                <p><i class="fas fa-phone"></i> <span id="displayPhone"></span></p>
+                <p><i class="fas fa-map-marker-alt"></i> <span id="displayAddress"></span></p>
+            </div>
+        </div>
+    </section>
+
+    <main class="profile-content">
+        <h3>Account Details</h3>
+        <table class="profile-table">
+            <tr><th>Full Name:</th><td id="fullName"></td></tr>
+            <tr><th>Email:</th><td id="emailRow"></td></tr>
+            <tr><th>Phone:</th><td id="phoneRow"></td></tr>
+            <tr><th>Address:</th><td id="addressRow"></td></tr>
+        </table>
+        <button class="btn btn-primary" id="editProfileBtn">Edit Profile</button>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section footer-about">
+                <h3 class="footer-logo"><span class="logo-sol">Sol</span><span class="logo-mate">Mate</span></h3>
+                <p>SolMate is a smart solar panel installation management system designed to streamline planning, monitoring, and deployment. We help installers, homeowners, and businesses transition to clean energy with efficiency and confidence.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="solarcalculator.html">Solar Calculator</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Solar Installation</a></li>
+                    <li><a href="#">System Maintenance</a></li>
+                    <li><a href="#">Site Assessment</a></li>
+                    <li><a href="#">ROI & Quotation Estimation</a></li>
+                    <li><a href="#">Consultation</a></li>
+                </ul>
+            </div>
+            <div class="footer-section footer-socials">
+                <h4>Socials</h4>
+                <div class="social-icons">
+                    <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-info">
+                <p>&copy; 2026 RDY Solar Installation Inc. All Rights Reserved.</p>
+                <div class="footer-details">
+                    <span><i class="fas fa-map-marker-alt"></i> Pasig City, Philippines</span>
+                    <span><i class="fas fa-envelope"></i> <a href="mailto:rdysolarpanel@gmail.com">rdysolarpanel@gmail.com</a></span>
+                    <span><i class="fas fa-phone"></i> <a href="tel:+639654326865">+63 9654326865</a></span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const user = (function() {
+                const raw = sessionStorage.getItem('currentUser');
+                return raw ? JSON.parse(raw) : null;
+            })();
+            if (!user) {
+                window.location.href = 'login.html';
+                return;
+            }
+            const name = user.firstName + ' ' + (user.lastName || '');
+            document.getElementById('displayName').textContent = name;
+            document.getElementById('fullName').textContent = name;
+            document.getElementById('emailRow').textContent = user.email;
+            document.getElementById('displayEmail').textContent = user.email;
+            document.getElementById('phoneRow').textContent = user.contact || '-';
+            document.getElementById('displayPhone').textContent = user.contact || '-';
+            document.getElementById('addressRow').textContent = user.address || '-';
+            document.getElementById('displayAddress').textContent = user.address || '-';
+
+            // edit button placeholder
+            const editBtn = document.getElementById('editProfileBtn');
+            editBtn.addEventListener('click', () => {
+                alert('Profile editing not implemented yet');
+            });
+        });
+    </script>
+</body>
+</html>
